@@ -143,9 +143,16 @@ import re
 # print(noNewLineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group())
 
 # case-insensitive matching
-robocop = re.compile(r'robocop', re.I)
-print(robocop.search('Robocop is part man, part machine, all cop.').group())
+# robocop = re.compile(r'robocop', re.I)
+# print(robocop.search('Robocop is part man, part machine, all cop.').group())
 
-print(robocop.search('ROBOCOP protects the innocent').group())
+# print(robocop.search('ROBOCOP protects the innocent').group())
 
-print(robocop.search('Al, why does your programming book talk about robocop so much?').group())
+# print(robocop.search('Al, why does your programming book talk about robocop so much?').group())
+
+# substituting strings with the sub() method
+namesRegex = re.compile(r'Agent \w+')
+print(namesRegex.sub('CENSORED','Agent Alice gave the secret documents to Agent Bob.'))
+
+agentNamesRegex = re.compile(r'Agent (\w)\w*')
+print(agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol that Agent Eve knew Agent Bob was a double agent.'))
