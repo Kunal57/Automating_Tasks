@@ -77,10 +77,21 @@ import re
 # print(mo2)
 
 # greedy and nongreedy matching
-greedyHaRegex = re.compile(r'(Ha){3,5}')
-mo1 = greedyHaRegex.search('HaHaHaHaHa')
-print(mo1.group())
+# greedyHaRegex = re.compile(r'(Ha){3,5}')
+# mo1 = greedyHaRegex.search('HaHaHaHaHa')
+# print(mo1.group())
 
-nongreedyHaRegex = re.compile(r'(Ha){3,5}?')
-mo2 = nongreedyHaRegex.search('HaHaHaHaHa')
-print(mo2.group())
+# nongreedyHaRegex = re.compile(r'(Ha){3,5}?')
+# mo2 = nongreedyHaRegex.search('HaHaHaHaHa')
+# print(mo2.group())
+
+# the findall() method
+phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+mo = phoneNumRegex.search('Cell: 415-555-9999 Work: 212-555-0000')
+print(mo.group())
+
+phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # has no groups
+print(phoneNumRegex.findall('Cell: 414-555-9999 Work: 212-555-0000'))
+
+phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') # has no groups
+print(phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
