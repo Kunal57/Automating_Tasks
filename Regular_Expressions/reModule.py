@@ -86,12 +86,19 @@ import re
 # print(mo2.group())
 
 # the findall() method
-phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
-mo = phoneNumRegex.search('Cell: 415-555-9999 Work: 212-555-0000')
-print(mo.group())
+# phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+# mo = phoneNumRegex.search('Cell: 415-555-9999 Work: 212-555-0000')
+# print(mo.group())
 
-phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # has no groups
-print(phoneNumRegex.findall('Cell: 414-555-9999 Work: 212-555-0000'))
+# phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # has no groups
+# print(phoneNumRegex.findall('Cell: 414-555-9999 Work: 212-555-0000'))
 
-phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') # has no groups
-print(phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
+# phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') # has no groups
+# print(phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
+
+# making your own character classes
+vowelRegex = re.compile(r'[aeiouAEIOU]')
+print(vowelRegex.findall('Robocop eats baby food. BABY FOOD.'))
+
+consonantRegex = re.compile(r'[^aeiouAEIOU]')
+print(consonantRegex.findall('Robocop eats baby food. BABY FOOD.'))
