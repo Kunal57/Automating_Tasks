@@ -97,8 +97,22 @@ import re
 # print(phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
 
 # making your own character classes
-vowelRegex = re.compile(r'[aeiouAEIOU]')
-print(vowelRegex.findall('Robocop eats baby food. BABY FOOD.'))
+# vowelRegex = re.compile(r'[aeiouAEIOU]')
+# print(vowelRegex.findall('Robocop eats baby food. BABY FOOD.'))
 
-consonantRegex = re.compile(r'[^aeiouAEIOU]')
-print(consonantRegex.findall('Robocop eats baby food. BABY FOOD.'))
+# consonantRegex = re.compile(r'[^aeiouAEIOU]')
+# print(consonantRegex.findall('Robocop eats baby food. BABY FOOD.'))
+
+# the caret and dollar sign characters
+beginsWithHello = re.compile(r'^Hello')
+print(beginsWithHello.search('Hello world!'))
+print(beginsWithHello.search('He said hello.') == None)
+
+endsWithNumber = re.compile(r'\d$')
+print(endsWithNumber.search('Your Number is 42'))
+print(endsWithNumber.search('Your number is forty two.') == None)
+
+wholeStringIsNum = re.compile(r'^\d+$')
+print(wholeStringIsNum.search('1234567890'))
+print(wholeStringIsNum.search('12345xyz67890') == None)
+print(wholeStringIsNum.search('12   34567890') == None)
