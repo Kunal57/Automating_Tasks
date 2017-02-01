@@ -104,15 +104,19 @@ import re
 # print(consonantRegex.findall('Robocop eats baby food. BABY FOOD.'))
 
 # the caret and dollar sign characters
-beginsWithHello = re.compile(r'^Hello')
-print(beginsWithHello.search('Hello world!'))
-print(beginsWithHello.search('He said hello.') == None)
+# beginsWithHello = re.compile(r'^Hello')
+# print(beginsWithHello.search('Hello world!'))
+# print(beginsWithHello.search('He said hello.') == None)
 
-endsWithNumber = re.compile(r'\d$')
-print(endsWithNumber.search('Your Number is 42'))
-print(endsWithNumber.search('Your number is forty two.') == None)
+# endsWithNumber = re.compile(r'\d$')
+# print(endsWithNumber.search('Your Number is 42'))
+# print(endsWithNumber.search('Your number is forty two.') == None)
 
-wholeStringIsNum = re.compile(r'^\d+$')
-print(wholeStringIsNum.search('1234567890'))
-print(wholeStringIsNum.search('12345xyz67890') == None)
-print(wholeStringIsNum.search('12   34567890') == None)
+# wholeStringIsNum = re.compile(r'^\d+$')
+# print(wholeStringIsNum.search('1234567890'))
+# print(wholeStringIsNum.search('12345xyz67890') == None)
+# print(wholeStringIsNum.search('12   34567890') == None)
+
+# the wildcard character
+atRegex = re.compile(r'.at')
+print(atRegex.findall('The cat in the hat sat on the flat mat.'))
