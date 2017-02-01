@@ -136,8 +136,16 @@ import re
 # print(mo.group())
 
 # matching newlines with the dot character
-noNewLineRegex = re.compile('.*')
-print(noNewLineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group())
+# noNewLineRegex = re.compile('.*')
+# print(noNewLineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group())
 
-noNewLineRegex = re.compile('.*', re.DOTALL)
-print(noNewLineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group())
+# noNewLineRegex = re.compile('.*', re.DOTALL)
+# print(noNewLineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group())
+
+# case-insensitive matching
+robocop = re.compile(r'robocop', re.I)
+print(robocop.search('Robocop is part man, part machine, all cop.').group())
+
+print(robocop.search('ROBOCOP protects the innocent').group())
+
+print(robocop.search('Al, why does your programming book talk about robocop so much?').group())
