@@ -27,5 +27,12 @@ print(os.listdir("/Users/Kunal/Development/Automating_Tasks"))
 totalSize = 0
 for filename in os.listdir("/Users/Kunal/Development/Automating_Tasks"):
   totalSize += os.path.getsize(os.path.join("/Users/Kunal/Development/Automating_Tasks", filename))
-
 print(totalSize)
+
+# Checking Path Validity
+print(os.path.exists("/Users"))
+print(os.path.exists("/Users/Folder"))
+print(os.path.isdir("/Users/Kunal/Development"))
+print(os.path.isfile("/Users/Kunal/Development"))
+print(os.path.isdir("/Users/Kunal/Development/Automating_Tasks/Reading_and_Writing_Files/os_path_module.py"))
+print(os.path.isfile("/Users/Kunal/Development/Automating_Tasks/Reading_and_Writing_Files/os_path_module.py"))
