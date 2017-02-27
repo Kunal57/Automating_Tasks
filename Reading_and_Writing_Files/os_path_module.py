@@ -18,3 +18,14 @@ pathName = os.path.dirname(path), os.path.basename(path)
 print(pathName)
 
 print(path.split(os.path.sep))
+
+# Finding File Sizes and Folder Contents
+path = '/Users/Kunal/Development/Automating_Tasks/Reading_and_Writing_Files/os_path_module.py'
+print(os.path.getsize(path))
+print(os.listdir("/Users/Kunal/Development/Automating_Tasks"))
+
+totalSize = 0
+for filename in os.listdir("/Users/Kunal/Development/Automating_Tasks"):
+  totalSize += os.path.getsize(os.path.join("/Users/Kunal/Development/Automating_Tasks", filename))
+
+print(totalSize)
