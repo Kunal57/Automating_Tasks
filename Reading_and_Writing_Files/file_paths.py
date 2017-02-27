@@ -9,3 +9,6 @@ import os
 print(os.getcwd())
 os.chdir("/Users/Kunal/Development/Automating_Tasks")
 print(os.getcwd())
+
+# Creating New Folders with os.makedirs()
+os.makedirs('/Users/Kunal/Development/Automating_Tasks/Reading_and_Writing_Files/New_Folder')
