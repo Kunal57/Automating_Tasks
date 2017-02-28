@@ -27,12 +27,21 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
    'Montpelier', 'Virginia': 'Richmond', 'Washington': 'Olympia',
    'West Virginia': 'Charleston', 'Wisconsin': 'Madison', 'Wyoming': 'Cheyenne'}
 
+# Step 2: Create the Quiz File and Shuffle the Question Order
+
 # Generate 35 quiz files.
 for quizNum in range(35):
-       # TODO: Create the quiz and answer key files.
+  # Create the quiz and answer key files.
+  quizFile = open("capitalsquiz%s.txt" % (quizNum + 1), "w")
+  anwerKeyFile = open("capitalsquiz_answers%s.txt" % (quizNum + 1), "w")
 
-       # TODO: Write out the header for the quiz.
+  # Write out the header for the quiz.
+  quizFile.write("Name:\n\nDate:\n\nPeriod:\n\n")
+  quizFile.write((" " * 20) + "State Capitals Quiz (Form %s)" % (quizNum + 1))
+  quizFile.write("\n\n")
 
-       # TODO: Shuffle the order of the states.
+  # Shuffle the order of the states.
+  states = list(capitals.key())
+  random.shuffle(states)
 
-       # TODO: Loop through all 50 states, making a question for each.
+  # TODO: Loop through all 50 states, making a question for each.
